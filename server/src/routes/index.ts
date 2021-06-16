@@ -1,6 +1,7 @@
 import express from 'express';
 import axios from 'axios';
 import { parseItemDetail } from '../utils/parseItemDetail';
+import { ItemsMeliIntegration, parseSearchResults } from '../utils/parseSearchResults';
 
 const router = express.Router();
 
@@ -12,18 +13,16 @@ router.get('/status', (_req, res) => {
 
 router.get('/search', async (req, res) => {
   const { q } = req.query;
-  console.log(req.query)
   const urlParams = new URLSearchParams();
   if (q) {
     urlParams.set('q', q as string);
   }
   urlParams.set('limit', '4');
   const url = `${BASE_MELI_URL}/sites/MLA/search?${urlParams.toString()}`
-  console.log(url)
-  const response = await axios.get(url);
-  const { results } = response.data
-  console.log(response);
-  res.json(results)
+  const response = await axios.get<ItemsMeliIntegration>(url);
+  const { results, available_filters } = response.data
+  const data = parseSearchResults(results, available_filters)
+  res.json(data)
 })
 
 router.get('/items/:id', async (req, res, next) => {

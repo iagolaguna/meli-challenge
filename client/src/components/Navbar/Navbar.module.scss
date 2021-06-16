@@ -1,0 +1,59 @@
+@import "styles/colors";
+
+nav.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $yellow;
+  padding: 8px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  cursor: pointer;
+  margin-right: 24px;
+}
+
+.search {
+  height: 48px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  & > input[type="text"] {
+    flex: 1;
+    font-size: 18px;
+    border: none;
+    border-radius: 2px 0px 0px 2px;
+    padding: 0px;
+    height: 30px;
+    padding: 4px 8px;
+    &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+  .icon {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $light_gray;
+    border-radius: 0px 2px 2px 0px;
+    height: 100%;
+    padding: 0px 12px;
+    box-sizing: border-box;
+    max-height: 40px;
+    cursor: pointer;
+    img {
+      user-select: none;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import "styles/colors.scss";
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.image {
+  border-radius: 4px;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-right: 16px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0px;
+  p {
+    color: $black;
+    font-size: 18px;
+  }
+}
+
+.price {
+  display: flex;
+  align-items: center;
+
+  font-size: 24px;
+  color: $black;
+  span {
+    margin-right: 8px;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+}

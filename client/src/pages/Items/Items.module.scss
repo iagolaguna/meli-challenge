@@ -1,0 +1,15 @@
+@import "styles/colors.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  margin-top: 46px;
+  width: 1200px;
+  background-color: white;
+  border-radius: 2px;
+  height: auto;
+}

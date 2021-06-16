@@ -22,10 +22,10 @@ type AvailableFilter = {
   values: AvailableFilterValue[];
 };
 
-// type ItemsMeliIntegration = {
-//   results: ItemMeliIntegration[];
-//   available_filters: AvailableFilter[];
-// }
+export type ItemsMeliIntegration = {
+  results: ItemMeliIntegration[];
+  available_filters: AvailableFilter[];
+}
 
 export const parseSearchResults = (result: ItemMeliIntegration[], availableFilters: AvailableFilter[]) => {
   console.log(availableFilters)
@@ -45,7 +45,7 @@ export const parseSearchResults = (result: ItemMeliIntegration[], availableFilte
       name: "Iago",
       lastname: "Laguna"
     },
-    categories: categories.values.map(({ name }) => name),
+    categories: categories?.values.map(({ name }) => name),
     items
   }
 }

@@ -1,0 +1,7 @@
+@import "styles/colors.scss";
+
+.root {
+  width: 100%;
+  height: calc(100% - 65px);
+  background-color: $light_gray;
+}
