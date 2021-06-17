@@ -4,7 +4,8 @@
     "start:dev": "cross-env NODE_ENV=dev nodemon src/index.ts",
     "build": "tsc --build",
     "lint": "eslint --fix src/**/*.ts __tests__/**/*.ts",
-    "test": "NODE_ENV=test jest --verbose"
+    "test": "NODE_ENV=test jest --verbose",
+    "test:coverage": "react-scripts test --coverage --watchAll=false"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
