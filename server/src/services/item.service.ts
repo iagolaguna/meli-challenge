@@ -1,5 +1,5 @@
 import { AxiosInstance } from 'axios';
-import { ItemDescription, ItemDetailIntegration, parseItemDetail } from '../utils/parseItemDetail';
+import { ItemDescription, ItemDetailIntegration, parseItemDetail } from '~/utils/parseItemDetail';
 
 export class ItemService {
   private axios: AxiosInstance;

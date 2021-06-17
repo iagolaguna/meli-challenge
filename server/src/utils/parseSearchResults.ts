@@ -1,4 +1,4 @@
-import { getAmoutAndDecimalFromPrice } from '../utils/getAmoutAndDecimalFromPrice';
+import { getAmoutAndDecimalFromPrice } from '~/utils/getAmoutAndDecimalFromPrice';
 import { author } from './constants';
 
 type ItemMeliIntegration = {

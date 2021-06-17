@@ -1,5 +1,5 @@
 import 'dotenv/config'
-// import 'reflect-metadata'
+import './config-aliases'
 import dotenv from 'dotenv';
 import app from './app';
 import { ErrorRequestHandler } from 'express';

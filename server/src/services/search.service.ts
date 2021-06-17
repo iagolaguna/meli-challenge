@@ -1,5 +1,5 @@
 import { AxiosInstance } from 'axios';
-import { ItemsMeliIntegration, parseSearchResults } from '../utils/parseSearchResults';
+import { ItemsMeliIntegration, parseSearchResults } from '~/utils/parseSearchResults';
 
 const getSearchUrl = (query?: string) => {
   const urlParams = new URLSearchParams();

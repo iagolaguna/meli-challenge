@@ -1,7 +1,7 @@
 import express from 'express';
-import axios from '../utils/axios';
-import { SearchService } from '../services/search.service';
-import { ItemService } from '../services/item.service';
+import axios from '~/utils/axios';
+import { SearchService } from '~/services/search.service';
+import { ItemService } from '~/services/item.service';
 
 const router = express.Router();
 
