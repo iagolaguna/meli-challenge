@@ -1,8 +1,8 @@
 import useSWR from 'swr'
+import { Condition } from 'hooks/useItemDetail';
 import { fetcher } from 'utils/fetcher'
 
 export const base = process.env.REACT_APP_API_BASE_PATH;
-console.log(base)
 
 type useSearchItemsProps = {
     query: string
@@ -13,19 +13,20 @@ export type SearchResult = {
         lastname: string;
     },
     categories: string[];
-    items: SearchItem[]
+    items: Item[]
 }
-export type SearchItem = {
+
+export type Item = {
     id: string;
     title: string;
     price: {
-        price: number;
+        decimals: number;
         currency: string;
         amount: number;
     };
     picture: string;
     free_shipping: boolean;
-    condition: string;
+    condition: Condition;
 };
 
 const useSearchItems = ({ query }: useSearchItemsProps) => {

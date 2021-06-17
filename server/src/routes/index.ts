@@ -16,13 +16,11 @@ router.get('/search', async (req, res) => {
 
 router.get('/items/:id', async (req, res, next) => {
   const id = req.params.id;
-  console.log(id);
   try {
     const item = await itemService.getById(id)
-
     res.json(item)
   } catch (err) {
-    console.log(err)
+    console.log('Error:', err)
     next(err)
   }
 })

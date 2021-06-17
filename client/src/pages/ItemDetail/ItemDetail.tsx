@@ -1,5 +1,6 @@
 import useItemDetail, { Condition } from "hooks/useItemDetail";
 import { useParams } from "react-router";
+import { formatAmount } from "utils/formatAmount";
 import style from "./ItemDetail.module.scss";
 
 const getConditionLabel = (condition: Condition) => {
@@ -11,11 +12,9 @@ const getConditionLabel = (condition: Condition) => {
 const ItemDetail = () => {
   const { id } = useParams<{ id: string }>();
   const { data } = useItemDetail({ id });
-
-  if (!data) {
+  if (!data?.item) {
     return null;
   }
-  console.log(data);
   return (
     <div className={style.root}>
       <div className={style.wrapper}>
@@ -26,7 +25,9 @@ const ItemDetail = () => {
               data.item.sold_quantity
             } vendidos`}</span>
             <h3>{data.item.title}</h3>
-            <span className={style.price}>$ {data.item.price.price}</span>
+            <span className={style.price}>
+              $ {formatAmount(data.item.price.amount)}
+            </span>
             <button type="button">Comprar</button>
           </div>
         </div>
