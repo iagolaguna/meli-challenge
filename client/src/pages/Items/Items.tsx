@@ -3,12 +3,17 @@ import { useHistory, useLocation } from "react-router";
 import style from "./Items.module.scss";
 import { Item } from "pages/Items/Item/Item";
 
+const getQueryFromSearchLocation = (search: string) => {
+  const [, query] = search.split("search=");
+  return query;
+};
 const Items = () => {
   const location = useLocation();
   const history = useHistory();
-  console.log(location);
-  const [, query] = location.search.split("search=");
-  const { data, error, isLoading } = useSearchItems({ query });
+  const { data } = useSearchItems({
+    query: getQueryFromSearchLocation(location.search),
+  });
+
   if (!data) {
     return null;
   }
