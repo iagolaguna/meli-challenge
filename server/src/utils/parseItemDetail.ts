@@ -1,5 +1,7 @@
+import { author } from './constants';
+import { getAmoutAndDecimalFromPrice } from './getAmoutAndDecimalFromPrice';
 
-type ItemMeliIntegration = {
+export type ItemMeliIntegration = {
   id: string;
   title: string;
   currency_id: string;
@@ -11,23 +13,24 @@ type ItemMeliIntegration = {
   thumbnail: string;
 }
 
-type ItemDetailIntegration = {
+export type ItemDetailIntegration = {
   sold_quantity: number;
 } & ItemMeliIntegration
 
+export type ItemDescription = {
+  plain_text: string;
+}
 
 export const parseItemDetail = (item: ItemDetailIntegration, description: string) => {
   const { id, title, currency_id, price, shipping, condition, thumbnail, sold_quantity } = item
+  const { amount, decimals } = getAmoutAndDecimalFromPrice(price);
 
   return {
-    author: {
-      name: "Iago",
-      lastname: "Laguna"
-    },
+    author,
     item: {
       id,
       title,
-      price: { price, currency: currency_id, amount: 0 },
+      price: { currency: currency_id, amount, decimals },
       picture: thumbnail,
       free_shipping: shipping.free_shipping,
       sold_quantity,

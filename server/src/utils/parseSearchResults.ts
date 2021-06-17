@@ -1,3 +1,5 @@
+import { getAmoutAndDecimalFromPrice } from '../utils/getAmoutAndDecimalFromPrice';
+import { author } from './constants';
 
 type ItemMeliIntegration = {
   id: string;
@@ -28,24 +30,22 @@ export type ItemsMeliIntegration = {
 }
 
 export const parseSearchResults = (result: ItemMeliIntegration[], availableFilters: AvailableFilter[]) => {
-  console.log(availableFilters)
   const [categories] = availableFilters.filter(({ id }) => id === 'category') || []
-  const items = result.map(({ id, title, currency_id, price, shipping, condition, thumbnail }) =>
-  ({
-    id,
-    title,
-    price: { price, currency: currency_id, amount: 0 },
-    picture: thumbnail,
-    free_shipping: shipping.free_shipping,
-    condition
-  }))
+  const items = result.map(({ id, title, currency_id, price, shipping, condition, thumbnail }) => {
+    const { amount, decimals } = getAmoutAndDecimalFromPrice(price);
+    return ({
+      id,
+      title,
+      price: { currency: currency_id, amount, decimals },
+      picture: thumbnail,
+      free_shipping: shipping.free_shipping,
+      condition
+    })
+  })
 
   return {
-    author: {
-      name: "Iago",
-      lastname: "Laguna"
-    },
-    categories: categories?.values.map(({ name }) => name),
+    author,
+    categories: categories?.values.map(({ name }) => name) || [],
     items
   }
 }
