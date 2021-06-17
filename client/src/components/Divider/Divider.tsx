@@ -1,7 +1,7 @@
 import style from "./Divider.module.scss";
 
 const Divider = () => {
-  return <div className={style.divider} />;
+  return <div aria-hidden="false" className={style.divider} />;
 };
 
 export default Divider;

@@ -3,6 +3,9 @@ import { fetcher } from 'utils/fetcher'
 
 export const base = process.env.REACT_APP_API_BASE_PATH;
 console.log(base)
+export enum Condition {
+    NEW = "new",
+}
 
 type useItemDetailProps = {
     id: string;
@@ -23,7 +26,7 @@ export type ItemDetail = {
         };
         picture: string;
         free_shipping: boolean;
-        condition: string;
+        condition: Condition;
         description: string;
         sold_quantity: number;
     }

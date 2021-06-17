@@ -17,28 +17,31 @@ export const Item = ({
   hasDivider = true,
   onClick,
 }: ItemProps) => {
-  const a = new Intl.NumberFormat(this, {
+  const formatedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: price.currency,
+    currency: "USD",
     currencyDisplay: "symbol",
-  }).format(price.price);
-  console.log("price", a);
+    maximumFractionDigits: 0,
+  })
+    .format(price.price)
+    .substring(1);
+
   return (
     <div className={style.item} onClick={onClick}>
       <div className={style.container}>
-        <img className={style.image} src={picture} alt="Item" />
+        <img className={style.image} src={picture} alt="Producto" />
         <div className={style.content}>
           <div className={style.price}>
-            <span>$ {price.price}</span>
+            <span aria-label="Precio">$ {formatedPrice}</span>
             {free_shipping && (
               <img
                 src={IcFreeShipping}
                 srcSet={`${IcFreeShipping} 1200w, ${IcFreeShipping2x} 1900w`}
-                alt="Free shipping"
+                alt="Envío gratis icon"
               />
             )}
           </div>
-          <p>{title}</p>
+          <h1>{title}</h1>
         </div>
       </div>
       {hasDivider && <Divider />}

@@ -9,11 +9,13 @@ const Items = () => {
   console.log(location);
   const [, query] = location.search.split("search=");
   const { data, error, isLoading } = useSearchItems({ query });
-
+  if (!data) {
+    return null;
+  }
   return (
     <div className={style.root}>
       <div className={style.container}>
-        {data?.items.map((item, i) => (
+        {data.items.map((item, i) => (
           <Item
             onClick={() => history.push(`/items/${item.id}`)}
             key={item.id}
