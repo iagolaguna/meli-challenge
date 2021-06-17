@@ -21,7 +21,28 @@ export type ItemDescription = {
   plain_text: string;
 }
 
-export const parseItemDetail = (item: ItemDetailIntegration, description: string) => {
+export type ItemDetail = {
+  author: {
+    name: string;
+    lastname: string;
+  },
+  item: {
+    description: string;
+    sold_quantity: number;
+    id: string;
+    title: string;
+    price: {
+      decimals: number;
+      currency: string;
+      amount: number;
+    };
+    picture: string;
+    free_shipping: boolean;
+    condition: string;
+  };
+};
+
+export const parseItemDetail = (item: ItemDetailIntegration, description: string): ItemDetail => {
   const { id, title, currency_id, price, shipping, condition, thumbnail, sold_quantity } = item
   const { amount, decimals } = getAmoutAndDecimalFromPrice(price);
 

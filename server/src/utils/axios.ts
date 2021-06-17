@@ -1,5 +1,4 @@
 import axios from 'axios';
-
-const BASE_MELI_URL = 'https://api.mercadolibre.com/';
+import { BASE_MELI_URL } from '~/utils/constants';
 
 export default axios.create({ baseURL: BASE_MELI_URL });

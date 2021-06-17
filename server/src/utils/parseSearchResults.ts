@@ -17,7 +17,7 @@ type AvailableFilterValue = {
   name: string;
 };
 
-type AvailableFilter = {
+export type AvailableFilter = {
   id: string;
   name: string;
   type: string;
