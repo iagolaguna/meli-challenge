@@ -6,8 +6,6 @@ import { Router } from "react-router";
 import { render, waitFor } from "@testing-library/react";
 import ItemDetail from "pages/ItemDetail/ItemDetail";
 import { cache } from "swr";
-import { getConditionLabel } from "utils/getConditionLabel";
-import { Condition } from "hooks/useItemDetail";
 
 const response = {
   author: { name: "Iago", lastname: "Laguna" },

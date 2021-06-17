@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import { Condition } from "hooks/useItemDetail";
 import { Item as SearchItem } from "hooks/useSearchItems";
 import { Item } from "pages/Items/Item/Item";
@@ -16,7 +16,7 @@ const itemMock: SearchItem = {
   condition: Condition.NEW,
 };
 
-describe("Item", () => {
+describe("<Item/>", () => {
   it("should render free shipping icon if flag free_shipping be true", () => {
     const handleClick = jest.fn();
     const { queryByAltText } = render(

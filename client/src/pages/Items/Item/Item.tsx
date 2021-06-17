@@ -18,7 +18,7 @@ export const Item = ({
   hasDivider = true,
   onClick,
 }: ItemProps) => (
-  <div className={style.item} onClick={onClick}>
+  <div className={style.item} onClick={onClick} role="listitem">
     <div className={style.container}>
       <img className={style.image} src={picture} alt="Producto" />
       <div className={style.content}>

@@ -21,7 +21,7 @@ const Items = () => {
 
   return (
     <div className={style.root}>
-      <div className={style.container}>
+      <div className={style.container} role="list">
         {data.items.map((item, i) => (
           <Item
             onClick={() => history.push(`/items/${item.id}`)}

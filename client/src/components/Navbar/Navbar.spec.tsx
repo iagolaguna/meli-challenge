@@ -3,7 +3,7 @@ import { Route, Router, Switch } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import Navbar from "components/Navbar/Navbar";
 
-describe("Navbar", () => {
+describe("<Navbar/>", () => {
   it("should search and when submit redirect to the correct url", () => {
     const history = createMemoryHistory();
     const search = "Iphone";

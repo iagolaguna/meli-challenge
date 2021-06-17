@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Item should not render <Divider/> component if flag hasDivider be false 1`] = `
+exports[`<Item/> should not render <Divider/> component if flag hasDivider be false 1`] = `
 <div>
   <div
     class="item"
+    role="listitem"
   >
     <div
       class="container"
@@ -44,10 +45,11 @@ exports[`Item should not render <Divider/> component if flag hasDivider be false
 </div>
 `;
 
-exports[`Item should render <Divider/> component if flag hasDivider be true 1`] = `
+exports[`<Item/> should render <Divider/> component if flag hasDivider be true 1`] = `
 <div>
   <div
     class="item"
+    role="listitem"
   >
     <div
       class="container"
