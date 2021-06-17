@@ -25,17 +25,20 @@ nav.navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: stretch;
   width: 100%;
+  background-color: white;
+  border-radius: 2px;
   & > input[type="text"] {
     color: $black;
-    @media (max-width: 1200px) {
+    @media (max-width: 1900px) {
       height: 31px;
     }
     height: 44px;
     width: 100%;
     font-size: 18px;
     border: none;
-    border-radius: 2px 0px 0px 2px;
+
     padding: 4px 8px;
     &:focus {
       outline: none;
@@ -44,7 +47,6 @@ nav.navbar {
   }
 
   .icon {
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,8 +54,7 @@ nav.navbar {
     outline: none;
     border: none;
     border-radius: 0px 2px 2px 0px;
-    padding: 8px;
-
+    padding: 10px;
     cursor: pointer;
     img {
       user-select: none;
