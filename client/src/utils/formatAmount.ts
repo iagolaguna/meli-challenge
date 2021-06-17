@@ -3,7 +3,7 @@ export function formatAmount (amount: number) {
         style: "currency",
         currency: "USD",
         currencyDisplay: "symbol",
-        maximumFractionDigits: 0,
+        minimumFractionDigits: 0
     })
         .format(amount)
         .substring(1);

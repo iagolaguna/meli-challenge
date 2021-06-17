@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo should match snpashot 1`] = `
+<div>
+  <img
+    alt="Logo Mercado livre"
+    src="Logo_ML.png"
+    srcset="Logo_ML.png 1200w, Logo_ML@2x.png 1900w"
+  />
+</div>
+`;

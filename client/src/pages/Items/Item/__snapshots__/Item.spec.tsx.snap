@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item should not render <Divider/> component if flag hasDivider be false 1`] = `
+<div>
+  <div
+    class="item"
+  >
+    <div
+      class="container"
+    >
+      <img
+        alt="Producto"
+        class="image"
+        src="http://http2.mlstatic.com/D_656548-MLA46114829749_052021-I.jpg"
+      />
+      <div
+        class="content"
+      >
+        <div
+          class="price"
+        >
+          <span
+            aria-label="Precio"
+          >
+            $ 
+            154,999
+          </span>
+          <img
+            alt="Envío gratis icon"
+            src="ic_shipping.png"
+            srcset="ic_shipping.png 1200w, ic_shipping@2x.png 1900w"
+          />
+        </div>
+        <h1>
+          Apple iPhone 11 (64 Gb) - Negro
+        </h1>
+      </div>
+    </div>
+    <div
+      aria-hidden="false"
+      class="divider"
+    />
+  </div>
+</div>
+`;
+
+exports[`Item should render <Divider/> component if flag hasDivider be true 1`] = `
+<div>
+  <div
+    class="item"
+  >
+    <div
+      class="container"
+    >
+      <img
+        alt="Producto"
+        class="image"
+        src="http://http2.mlstatic.com/D_656548-MLA46114829749_052021-I.jpg"
+      />
+      <div
+        class="content"
+      >
+        <div
+          class="price"
+        >
+          <span
+            aria-label="Precio"
+          >
+            $ 
+            154,999
+          </span>
+          <img
+            alt="Envío gratis icon"
+            src="ic_shipping.png"
+            srcset="ic_shipping.png 1200w, ic_shipping@2x.png 1900w"
+          />
+        </div>
+        <h1>
+          Apple iPhone 11 (64 Gb) - Negro
+        </h1>
+      </div>
+    </div>
+    <div
+      aria-hidden="false"
+      class="divider"
+    />
+  </div>
+</div>
+`;

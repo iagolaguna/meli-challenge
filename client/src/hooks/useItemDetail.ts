@@ -1,8 +1,7 @@
 import useSWR from 'swr'
 import { Item } from 'hooks/useSearchItems';
 import { fetcher } from 'utils/fetcher'
-
-export const base = process.env.REACT_APP_API_BASE_PATH;
+import { BASE_URL } from 'utils/constants';
 
 export enum Condition {
     NEW = "new",
@@ -24,7 +23,7 @@ export type ItemDetail = {
 };
 
 const useItemDetail = ({ id }: useItemDetailProps) => {
-    const { data, error } = useSWR<ItemDetail>(`${base}/items/${id}`, fetcher)
+    const { data, error } = useSWR<ItemDetail>(`${BASE_URL}/items/${id}`, fetcher)
     return {
         data,
         error,

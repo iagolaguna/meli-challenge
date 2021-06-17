@@ -7,6 +7,7 @@ const getQueryFromSearchLocation = (search: string) => {
   const [, query] = search.split("search=");
   return query;
 };
+
 const Items = () => {
   const location = useLocation();
   const history = useHistory();
@@ -17,6 +18,7 @@ const Items = () => {
   if (!data) {
     return null;
   }
+
   return (
     <div className={style.root}>
       <div className={style.container}>

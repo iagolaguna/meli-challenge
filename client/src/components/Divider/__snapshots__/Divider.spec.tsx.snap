@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider should match snpashot 1`] = `
+<div>
+  <div
+    aria-hidden="false"
+    class="divider"
+  />
+</div>
+`;

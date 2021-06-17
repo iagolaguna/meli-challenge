@@ -1,12 +1,12 @@
 import useSWR from 'swr'
 import { Condition } from 'hooks/useItemDetail';
 import { fetcher } from 'utils/fetcher'
-
-export const base = process.env.REACT_APP_API_BASE_PATH;
+import { BASE_URL } from 'utils/constants';
 
 type useSearchItemsProps = {
     query: string
 }
+
 export type SearchResult = {
     author: {
         name: string;
@@ -30,7 +30,7 @@ export type Item = {
 };
 
 const useSearchItems = ({ query }: useSearchItemsProps) => {
-    const { data, error } = useSWR<SearchResult>(query && `${base}/search?q=${query}`, fetcher)
+    const { data, error } = useSWR<SearchResult>(query && `${BASE_URL}/search?q=${query}`, fetcher)
 
     return {
         data,

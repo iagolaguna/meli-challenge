@@ -8,8 +8,9 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <main className={style.root}>
+      <section className={style.root}>
         <Switch>
+          <Route exact path="/" />
           <Route exact path="/items">
             <Items />
           </Route>
@@ -17,7 +18,7 @@ function App() {
             <ItemDetail />
           </Route>
         </Switch>
-      </main>
+      </section>
     </Router>
   );
 }
